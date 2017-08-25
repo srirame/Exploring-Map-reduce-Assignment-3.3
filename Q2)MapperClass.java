@@ -15,11 +15,10 @@ public void map(LongWritable key, Text value, Context con)
 	// Split "|"
 	String[] svalue=value.toString().split(Pattern.quote("|"));
 	String state = svalue[3].toString(); // state
-	System.out.print("state  -> "+state);
 	try {
-	   if(svalue[0].toString().contains("Onida"))
+	   if(svalue[0].toString().contains("Onida")) // zero position is company  contains Onida
 	   {
-			 int price = Integer.parseInt(svalue[5]);
+			 int price = Integer.parseInt(svalue[5]); // 5th Position is Price
 			 con.write(new Text(state), new IntWritable(price));
 	   }
 	} catch (Exception e) {

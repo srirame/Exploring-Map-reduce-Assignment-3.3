@@ -15,8 +15,9 @@ try {
 
      int sum = 0;
      for (IntWritable value : valueList) {
-		sum+=value.get();	
+		sum+=value.get();	// each value added into sum variable 
       }		
+	  //Company and Sum of price
       con.write(key, new IntWritable(sum));
 	   
 } catch (Exception e) {
